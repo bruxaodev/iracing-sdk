@@ -1,7 +1,7 @@
 package iryaml
 
 type SessionInfo struct {
-	Sessions []Session `yaml:Sessions"`
+	Sessions []Session `yaml:"Sessions"`
 }
 
 type Session struct {
