@@ -2,16 +2,15 @@ package irsdk
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"log"
 	"strings"
 	"time"
 
 	"github.com/go-yaml/yaml"
-	"github.com/Sj-Si/iracing-sdk/lib/winevents"
-	"github.com/Sj-Si/iracing-sdk/iryaml"
 	"github.com/hidez8891/shm"
-	"github.com/quimcalpe/iracing-sdk/lib/winevents"
+	winevents "github.com/Sj-Si/iracing-sdk/lib/winevents"
+	iryaml "github.com/Sj-Si/iracing-sdk/iryaml"
 )
 
 type SDK interface {
@@ -155,13 +154,13 @@ func (sdk *IRSDK) ExportIbtTo(fileName string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	ioutil.WriteFile(fileName, rbuf, 0644)
+	os.WriteFile(fileName, rbuf, 0644)
 }
 
 // ExportSessionTo exports current session yaml data to a file
 func (sdk *IRSDK) ExportSessionTo(fileName string) {
 	y := strings.Join(sdk.s, "\n")
-	ioutil.WriteFile(fileName, []byte(y), 0644)
+	os.WriteFile(fileName, []byte(y), 0644)
 }
 
 func (sdk *IRSDK) GetYaml() string {
