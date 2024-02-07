@@ -32,6 +32,7 @@ type SDK interface {
 
 // IRSDK is the main SDK object clients must use
 type IRSDK struct {
+	SDK
 	r             reader
 	h             *header
 	session       iryaml.IRSession
