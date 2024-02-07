@@ -59,7 +59,7 @@ type DriverInfo struct {
 	DriverHeadPosZ            float64  `yaml:"DriverHeadPosZ"`
 	DriverCarIsElectric       int      `yaml:"DriverCarIsElectric"`
 	DriverCarIdleRPM          float64  `yaml:"DriverCarIdleRPM"`
-	DrievrCarRedLine          float64  `yaml:"DrievrCarRedLine"`
+	DriverCarRedLine          float64  `yaml:"DriverCarRedLine"`
 	DriverCarEngCylinderCount int      `yaml:"DriverCarEngCylinderCount"`
 	DriverCarFuelKgPerLtr     float64  `yaml:"DriverCarFuelKgPerLtr"`
 	DriverCarFuelMaxLtr       float64  `yaml:"DriverCarFuelMaxLtr"`

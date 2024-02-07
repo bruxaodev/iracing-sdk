@@ -18,7 +18,7 @@ type Session struct {
 	SessionEnforceTireCompoundChange int                 `yaml:"SessionEnforceTireCompoundChange"`
 	ResultsPositions                 []ResultsPosition   `yaml:"ResultsPositions"`
 	ResultsFastestLap                []ResultsFastestLap `yaml:"ResultsFastestLap"`
-	ResultsAverageLapTime            int                 `yaml:"ResultsAverageLapTime"`
+	ResultsAverageLapTime            float64             `yaml:"ResultsAverageLapTime"`
 	ResultsNumCautionFlags           int                 `yaml:"ResultsNumCautionFlags"`
 	ResultsNumCautionLaps            int                 `yaml:"ResultsNumCautionLaps"`
 	ResultsNumLeadChanges            int                 `yaml:"ResultsNumLeadChanges"`
@@ -31,10 +31,10 @@ type ResultsPosition struct {
 	ClassPosition     int     `yaml:"ClassPosition"`
 	CarIdx            int     `yaml:"CarIdx"`
 	Lap               int     `yaml:"Lap"`
-	Time              int     `yaml:"Time"`
+	Time              float64 `yaml:"Time"`
 	FastestLap        int     `yaml:"FastestLap"`
-	FastestTime       int     `yaml:"FastestTime"`
-	LastTime          int     `yaml:"LastTime"`
+	FastestTime       float64 `yaml:"FastestTime"`
+	LastTime          float64 `yaml:"LastTime"`
 	LapsLed           int     `yaml:"LapsLed"`
 	LapsComplete      int     `yaml:"LapsComplete"`
 	JokerLapsComplete int     `yaml:"JokerLapsComplete"`
