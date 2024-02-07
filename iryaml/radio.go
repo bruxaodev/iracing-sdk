@@ -1,4 +1,4 @@
-package iyraml
+package iryaml
 
 type Frequencies struct {
 	FrequencyNum  int    `yaml:"FrequencyNum"`
