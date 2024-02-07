@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type varBuffer struct {
+type VarBuffer struct {
 	TickCount int // used to detect changes in data
 	bufOffset int // offset from header
 }
@@ -128,7 +128,7 @@ func readVariableValues(sdk *IRSDK) bool {
 				switch v.VarType {
 				case VarTypeChar:
 					values := make([]string, v.Count)
-					for i := range v.Count {
+					for i := 0; i < v.Count; i++ {
 						rbuf = make([]byte, 1)
 						_, err := sdk.r.ReadAt(rbuf, int64(vb.bufOffset+v.offset+(1*i)))
 						if err != nil {
@@ -140,7 +140,7 @@ func readVariableValues(sdk *IRSDK) bool {
 					v.Values = values
 				case VarTypeBool:
 					values := make([]bool, v.Count)
-					for i := range v.Count {
+					for i := 0; i < v.Count; i++ {
 						rbuf = make([]byte, 1)
 						_, err := sdk.r.ReadAt(rbuf, int64(vb.bufOffset+v.offset+(1*i)))
 						if err != nil {
@@ -152,7 +152,7 @@ func readVariableValues(sdk *IRSDK) bool {
 					v.Values = values
 				case VarTypeInt:
 					values := make([]int, v.Count)
-					for i := range v.Count {
+					for i := 0; i < v.Count; i++ {
 						rbuf = make([]byte, 4)
 						_, err := sdk.r.ReadAt(rbuf, int64(vb.bufOffset+v.offset+(4*i)))
 						if err != nil {
@@ -164,7 +164,7 @@ func readVariableValues(sdk *IRSDK) bool {
 					v.Values = values
 				case VarTypeBitField:
 					values := make([]int, v.Count)
-					for i := range v.Count {
+					for i := 0; i < v.Count; i++ {
 						rbuf = make([]byte, 4)
 						_, err := sdk.r.ReadAt(rbuf, int64(vb.bufOffset+v.offset+(4*i)))
 						if err != nil {
@@ -176,7 +176,7 @@ func readVariableValues(sdk *IRSDK) bool {
 					v.Values = values
 				case VarTypeFloat:
 					values := make([]float32, v.Count)
-					for i := range v.Count {
+					for i := 0; i < v.Count; i++ {
 						rbuf = make([]byte, 4)
 						_, err := sdk.r.ReadAt(rbuf, int64(vb.bufOffset+v.offset+(4*i)))
 						if err != nil {
@@ -188,7 +188,7 @@ func readVariableValues(sdk *IRSDK) bool {
 					v.Values = values
 				case VarTypeDouble:
 					values := make([]float64, v.Count)
-					for i := range v.Count {
+					for i := 0; i < v.Count; i++ {
 						rbuf = make([]byte, 8)
 						_, err := sdk.r.ReadAt(rbuf, int64(vb.bufOffset+v.offset+(8*i)))
 						if err != nil {

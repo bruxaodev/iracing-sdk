@@ -66,7 +66,7 @@ func (sdk *IRSDK) WaitForData(timeout time.Duration) bool {
 
 func (sdk *IRSDK) GetVars() ([]Variable, error) {
 	if !sessionStatusOK(sdk.h.status) {
-		return make([]Variable, 0, fmt.Errorf("session is not active"))
+		return make([]Variable, 0), fmt.Errorf("session is not active")
 	}
 
 	results := make([]Variable, len(sdk.tVars.vars))
@@ -74,8 +74,10 @@ func (sdk *IRSDK) GetVars() ([]Variable, error) {
 	sdk.tVars.mux.Lock()
 	defer sdk.tVars.mux.Unlock()
 
-	for i, variable := range sdk.tVars.vars {
+	i := 0
+	for _, variable := range sdk.tVars.vars {
 		results[i] = variable
+		i++
 	}
 
 	return results, nil
