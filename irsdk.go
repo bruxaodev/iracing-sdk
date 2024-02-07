@@ -2,15 +2,15 @@ package irsdk
 
 import (
 	"fmt"
-	"os"
 	"log"
+	"os"
 	"strings"
 	"time"
 
+	iryaml "github.com/Sj-Si/iracing-sdk/iryaml"
+	winevents "github.com/Sj-Si/iracing-sdk/lib/winevents"
 	"github.com/go-yaml/yaml"
 	"github.com/hidez8891/shm"
-	winevents "github.com/Sj-Si/iracing-sdk/lib/winevents"
-	iryaml "github.com/Sj-Si/iracing-sdk/iryaml"
 )
 
 type SDK interface {
@@ -66,7 +66,7 @@ func (sdk *IRSDK) WaitForData(timeout time.Duration) bool {
 
 func (sdk *IRSDK) GetVars() ([]Variable, error) {
 	if !sessionStatusOK(sdk.h.status) {
-		return make([]Variable, 0, fmt.Errorf("session is not active")
+		return make([]Variable, 0, fmt.Errorf("session is not active"))
 	}
 
 	results := make([]Variable, len(sdk.tVars.vars))
@@ -97,7 +97,7 @@ func (sdk *IRSDK) GetVar(name string) (Variable, error) {
 func (sdk *IRSDK) GetVarValue(name string) (interface{}, error) {
 	var r Variable
 	var err error
-	
+
 	if r, err = sdk.GetVar(name); err == nil {
 		return r.Value, nil
 	}
@@ -105,7 +105,7 @@ func (sdk *IRSDK) GetVarValue(name string) (interface{}, error) {
 	return r, err
 }
 
-func (sdk *IRSDK GetVarValues(name string) (interface{}, error) {
+func (sdk *IRSDK) GetVarValues(name string) (interface{}, error) {
 	var r Variable
 	var err error
 
