@@ -26,7 +26,7 @@ type Driver struct {
 	CarClassPowerAdjust     string  `yaml:"CarClassPowerAdjust"`
 	CarClassDryTireSetLimit string  `yaml:"CarClassDryTireSetLimit"`
 	CarClassColor           string  `yaml:"CarClassColor"`
-	CarClassEstLapTime      float64 `yaml:"CarClassEstLapTime"`
+	CarClassEstLapTime      float32 `yaml:"CarClassEstLapTime"`
 	IRating                 int     `yaml:"IRating"`
 	LicLevel                int     `yaml:"LicLevel"`
 	LicSubLevel             int     `yaml:"LicSubLevel"`
@@ -72,8 +72,8 @@ type DriverInfo struct {
 	DriverCarSLLastRPM        float64  `yaml:"DriverCarSLLastRPM"`
 	DriverCarSLBlinkRPM       float64  `yaml:"DriverCarSLBlinkRPM"`
 	DriverCarVersion          string   `yaml:"DriverCarVersion"`
-	DriverPitTrkPct           float64  `yaml:"DriverPitTrkPct"`
-	DriverCarEstLapTime       float64  `yaml:"DriverCarEstLapTime"`
+	DriverPitTrkPct           float32  `yaml:"DriverPitTrkPct"`
+	DriverCarEstLapTime       float32  `yaml:"DriverCarEstLapTime"`
 	DriverSetupName           string   `yaml:"DriverSetupName"`
 	DriverSetupIsModified     int      `yaml:"DriverSetupIsModified"`
 	DriverSetupLoadTypeName   string   `yaml:"DriverSetupLoadTypeName"`
