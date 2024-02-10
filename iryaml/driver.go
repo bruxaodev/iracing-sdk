@@ -20,7 +20,7 @@ type Driver struct {
 	CarScreenNameShort      string  `yaml:"CarScreenNameShort"`
 	CarClassShortName       string  `yaml:"CarClassShortName"`
 	CarClassRelSpeed        int     `yaml:"CarClassRelSpeed"`
-	CarClassLicenceLevel    int     `yaml:"CarClassLicenceLevel"`
+	CarClassLicenseLevel    int     `yaml:"CarClassLicenseLevel"`
 	CarClassMaxFuelPct      string  `yaml:"CarClassMaxFuelPct"`
 	CarClassWeightPenalty   string  `yaml:"CarClassWeightPenalty"`
 	CarClassPowerAdjust     string  `yaml:"CarClassPowerAdjust"`
