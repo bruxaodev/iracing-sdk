@@ -1,4 +1,4 @@
-module github.com/Sj-Si/iracing-sdk
+module github.com/bruxaodev/iracing-sdk
 
 go 1.21.6
 

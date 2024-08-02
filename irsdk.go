@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	iryaml "github.com/Sj-Si/iracing-sdk/iryaml"
-	winevents "github.com/Sj-Si/iracing-sdk/lib/winevents"
+	iryaml "github.com/bruxaodev/iracing-sdk/iryaml"
+	winevents "github.com/bruxaodev/iracing-sdk/lib/winevents"
 	"github.com/go-yaml/yaml"
 	"github.com/hidez8891/shm"
 )
